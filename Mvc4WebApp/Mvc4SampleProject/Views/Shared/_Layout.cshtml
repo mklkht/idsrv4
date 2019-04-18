@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/themes/base/css", "~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+           <div id="header">
+        <div id="logo">
+            <p class="site-title">@Html.ActionLink("My ASP.NET MVC 4 website", "Index", "Home")</p><br />
+             
+        </div>
+    </div>
+    <!-- end #header -->
+        </header>
+      <div id="menu">
+        <ul>
+            <li class="first">
+               @Html.ActionLink("Home", "Index", "Home")</li>
+              <li>@Html.ActionLink("Secret", "Secret", "Home")</li>
+                
+        </ul>
+    </div>
+    <!-- end #menu -->
+    <div id="content-wrapper">
+        <div class="btm">
+            <div id="page">
+                <div id="content">
+                    <div class="post">
+                        <div class="entry">
+                            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+                        </div>
+                    </div>
+                </div>
+                <!-- end #content -->
+               
+                <div style="clear: both;">
+                    &nbsp;</div>
+            </div>
+            <!-- end #page -->
+        </div>
+    </div>
+         <footer>
+          <div id="footer">
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - POC ASP.NET MVC Application</p>
+                </div>
+            </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
